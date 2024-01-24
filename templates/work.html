@@ -88,7 +88,7 @@ body {
 .home {
     width: 100%;
     height: 100vh;
-    background-color: #111;
+    background-image: url("https://images.unsplash.com/photo-1509718443690-d8e2fb3474b7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     background-position: center top;
 	background-size:cover;
 }
@@ -556,9 +556,22 @@ h2 {
     color: #333;
     margin-bottom: 30px; /* Add margin for spacing between title and content */
 }
-
-
 </style>
+
+<style>
+    .unclickable-link {
+        pointer-events: none;
+        cursor: default;
+        color: gray;
+        text-decoration: none;
+    }
+
+    .unclickable-link:hover {
+        color: gray; /* Optional: You can keep the hover color the same as normal to indicate it's inactive */
+    }
+</style>
+
+
 </head>
 <body>
 <nav class="nav">
@@ -671,7 +684,7 @@ h2 {
         <!-- Project 3 -->
         <div class="project-container">
             <h3>School Database System</h3>
-            <p>A family-oriented website for sharing photos, events, and updates.</p>
+            <p>A comprehensive database management solution designed to streamline and enhance various aspects of school administration</p>
             <div class="project-links">
                 <a href="#" target="_blank">Preview</a>
                 <a href="#" target="_blank">GitHub</a>
@@ -681,7 +694,7 @@ h2 {
         <!-- Project 4 -->
         <div class="project-container">
             <h3>Timetabling System</h3>
-            <p>A family-oriented website for sharing photos, events, and updates.</p>
+            <p> A robust scheduling solution tailored for educational institutions to efficiently manage and organize class schedules, events, and resources. </p>
             <div class="project-links">
                 <a href="#" target="_blank">Preview</a>
                 <a href="#" target="_blank">GitHub</a>
@@ -698,9 +711,9 @@ h2 {
         <!-- os 1 -->
         <div class="project-container">
             <h3>Build plugins or extensions for existing software</h3>
-            <p>A website showcasing various car models with details and specifications.</p>
+            <p>Creating versatile and seamless add-ons that augment the functionality of various software applications.</p>
             <div class="project-links">
-                <a href="#" target="_blank">Preview</a>
+                <a href="#" target="_blank" class="unclickable-link">Preview</a>
                 <a href="#" target="_blank">GitHub</a>
             </div>
         </div>
@@ -708,7 +721,7 @@ h2 {
         <!-- Open source 2 -->
         <div class="project-container">
             <h3>Develop tools to improve developer workflows</h3>
-            <p>A website showcasing various car models with details and specifications.</p>
+            <p>Tools crafted to simplify tasks, boost productivity, and streamline the software development process</p>
             <div class="project-links">
                 <a href="#" target="_blank">Preview</a>
                 <a href="#" target="_blank">GitHub</a>
@@ -721,7 +734,9 @@ h2 {
         <h2>Contact</h2>
         <div class="contact-info">
             <p>Feel free to contact me for any project or collaboration.</p>
-            <p>Phone: +254 712 345 678</p>
+            <p><a href="https://wa.me/+254748778517?text=Hi%20there!%20I%20visited%20your%20portfolio%20and%20was%20impressed%20by%20your%20work.%20I'd%20love%20to%20connect%20and%20discuss%20potential%20collaborations%20or%20projects.%20Looking%20forward%20to%20hearing%20from%20you!">WhatsApp now</a></p>
+
+            <p><a href="tel:+254748778517">Phone: +254 7487 785 17</a></p>
             <p>Email: <a href="mailto:Mukuhalevi@gmail.com">Mukuhalevi@gmail.com</a></p>
         </div>
 
