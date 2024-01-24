@@ -1,226 +1,758 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <title>Global</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="HTML5 website template">
-  <meta name="keywords" content="global, template, html, sass, jquery">
-  <meta name="author" content="Bucky Maler">
-  <link rel="stylesheet" href="../static/assets/css/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-M8c2Gz/ZJ3sGU7G/Ca+9rA+Ko8LnFtuZ9qF5AM06oPFYI4J5nFQO2i8Rre5MIQ5RpD2H0DqNl6fTyeAq3gePsA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- ... (existing styles) ... -->
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+    font-size: 62.5%;
+    font-size: 10px;
+}
+/*-- Inspiration taken from abdo steif -->
+/* --> https://codepen.io/abdosteif/pen/bRoyMb?editors=1100*/
+
+/* Navbar section */
+.nav {
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    line-height: 65px;
+    text-align: center;
+    font-size: 1.8rem;
+    z-index: 1000; /* Set a higher z-index for the navbar */
+}
+
+.nav div.logo {
+    float: left;
+    width: auto;
+    height: auto;
+    padding-left: 3rem;
+}
+
+.nav div.logo a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+.nav div.logo a:hover {
+    color: #00E676;
+}
+
+.nav div.main_list {
+    height: 65px;
+    float: right;
+}
+
+.nav div.main_list ul {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav div.main_list ul li {
+    width: auto;
+    height: 65px;
+    padding: 0;
+    padding-right: 3rem;
+}
+
+.nav div.main_list ul li a {
+    text-decoration: none;
+    color: #fff;
+    line-height: 65px;
+    font-size: 2.4rem;
+}
+
+.nav div.main_list ul li a:hover {
+    color: #00E676;
+}
+
+
+/* Home section */
+
+.home {
+    width: 100%;
+    height: 100vh;
+    background-color: #111;
+    background-position: center top;
+	background-size:cover;
+}
+
+.navTrigger {
+    display: none;
+}
+
+.nav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+
+/* Media qurey section */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .navTrigger {
+        display: block;
+    }
+    .nav div.logo {
+        margin-left: 15px;
+    }
+    .nav div.main_list {
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+    }
+    .nav div.show_list {
+        height: auto;
+        display: none;
+    }
+    .nav div.main_list ul {
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: #111;
+        /*same background color of navbar*/
+        background-position: center top;
+    }
+    .nav div.main_list ul li {
+        width: 100%;
+        text-align: right;
+    }
+    .nav div.main_list ul li a {
+        text-align: center;
+        width: 100%;
+        font-size: 3rem;
+        padding: 20px;
+    }
+    .nav div.media_button {
+        display: block;
+    }
+}
+
+
+/* Animation */
+/* Inspiration taken from Dicson https://codemyui.com/simple-hamburger-menu-x-mark-animation/ */
+
+.navTrigger {
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    margin: auto;
+    position: absolute;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+}
+
+.navTrigger i {
+    background-color: #fff;
+    border-radius: 2px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+}
+
+.navTrigger i:nth-child(1) {
+    -webkit-animation: outT 0.8s backwards;
+    animation: outT 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(2) {
+    margin: 5px 0;
+    -webkit-animation: outM 0.8s backwards;
+    animation: outM 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(3) {
+    -webkit-animation: outBtm 0.8s backwards;
+    animation: outBtm 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger.active i:nth-child(1) {
+    -webkit-animation: inT 0.8s forwards;
+    animation: inT 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(2) {
+    -webkit-animation: inM 0.8s forwards;
+    animation: inM 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(3) {
+    -webkit-animation: inBtm 0.8s forwards;
+    animation: inBtm 0.8s forwards;
+}
+
+@-webkit-keyframes inM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes inM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes outM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes outM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes inT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@keyframes inT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@keyframes outT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes inBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@keyframes inBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@keyframes outBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+.affix {
+    padding: 0;
+    background-color: #111;
+}
+
+
+
+
+
+
+.myH2 {
+	text-align:center;
+	font-size: 4rem;
+}
+.myP {
+	text-align: justify;
+	padding-left:15%;
+	padding-right:15%;
+	font-size: 20px;
+}
+@media all and (max-width:700px){
+	.myP {
+		padding:2%;
+	}
+}
+  </style>
+<style>
+    body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+    font-size: 1.6rem; /* Adjust the font size as needed */
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Home section */
+.home {
+    width: 100%;
+    height: 100vh;
+    background-color: #111;
+    background-position: center top;
+    background-size: cover;
+}
+
+/* About Me section */
+section:nth-of-type(2) {
+    padding: 80px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.myH2 {
+    font-size: 3.5rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.myP {
+    text-align: justify;
+    font-size: 1.8rem;
+    color: #555;
+    line-height: 1.6; /* Adjust line height for better readability */
+    max-width: 800px; /* Limit the width for better readability on larger screens */
+    margin: 0 auto; /* Center the text within the container */
+}
+
+@media all and (max-width: 700px) {
+    .myP {
+        padding: 2%;
+    }
+}
+
+
+/* Skills section */
+section:nth-of-type(3) {
+    padding: 80px 0;
+    background-color: #f8f8f8;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.skill {
+    margin-bottom: 30px;
+    text-align: center;
+    width: calc(50% - 20px); /* 50% width with some spacing */
+}
+
+@media screen and (max-width: 768px) {
+    .skill {
+        width: calc(100% - 20px); /* Full width for mobile devices */
+    }
+}
+
+.skill-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.skill-bar {
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background-color: #00E676;
+    border-radius: 5px;
+}
+
+/* ... Previous styles ... */
+
+
+/* Projects section */
+section:nth-of-type(4) {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.project-container {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Keep a consistent z-index */
+}
+
+.project-container:hover {
+    transform: scale(1.02);
+}
+
+.project-links a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #00E676;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.project-links a:hover {
+    background-color: #009960;
+}
+/* Open Source Contributions section */
+section:nth-of-type(5) {
+    padding: 80px 0;
+    background-color: #f8f8f8;
+}
+
+/* Contact section */
+section:nth-of-type(6) {
+    padding: 80px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.contact-info {
+    max-width: 600px; /* Limit the width for better readability on larger screens */
+    margin: 0 auto; /* Center the content within the container */
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    color: #555;
+}
+
+.contact-info a {
+    color: #00E676;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+}
+
+.contact-info a:hover {
+    color: #009960;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    font-size: 24px; /* Adjust the size of the icons */
+}
+
+
+
+/* Center section titles */
+h2 {
+    text-align: center;
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 30px; /* Add margin for spacing between title and content */
+}
+
+
+</style>
 </head>
 <body>
-
-<!-- notification for small viewports and landscape oriented smartphones -->
-<div class="device-notification">
-  <a class="device-notification--logo" href="#0">
-    <img src="../static/assets/img/logo.png" alt="Global">
-    <p>Global</p>
-  </a>
-  <p class="device-notification--message">Global has so much to offer that we must request you orient your device to portrait or find a larger screen. You won't be disappointed.</p>
-</div>
-
-<div class="perspective effect-rotate-left">
-  <div class="container"><div class="outer-nav--return"></div>
-    <div id="viewport" class="l-viewport">
-      <div class="l-wrapper">
-        <header class="header">
-          <a class="header--logo" href="#0">
-            <img src="../static/assets/img/logo.png" alt="Global">
-            <p>Global</p>
-          </a>
-          <button class="header--cta cta">Hire Me</button>
-          <div class="header--nav-toggle">
-            <span></span>
-          </div>
-        </header>
-        <nav class="l-side-nav">
-          <ul class="side-nav">
-            <li class="is-active"><span>Home</span></li>
-            <li><span>Works</span></li>
-            <li><span>About</span></li>
-
-          </ul>
-        </nav>
-        <ul class="l-main-content main-content">
-          <li class="l-section section section--is-active">
-            <div class="work">
-              <h2>System development</h2>
-              <div class="work--lockup">
-                <ul class="slider">
-                  <li class="slider--item slider--item-left">
-                    <a href="#0">
-                      <div class="slider--item-image">
-                        <img src="../static/assets/img/work-victory.jpg" alt="Victory">
-                      </div>
-                      <p class="slider--item-title">Victory</p>
-                      <p class="slider--item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
-                    </a>
-                  </li>
-                  <li class="slider--item slider--item-center">
-                    <a href="#0">
-                      <div class="slider--item-image">
-                        <img src="../static/assets/img/work-metiew-smith.jpg" alt="Metiew and Smith">
-                      </div>
-                      <p class="slider--item-title">Metiew &amp; Smith</p>
-                      <p class="slider--item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
-                    </a>
-                  </li>
-                  <li class="slider--item slider--item-right">
-                    <a href="#0">
-                      <div class="slider--item-image">
-                        <img src="../static/assets/img/work-alex-nowak.jpg" alt="Alex Nowak">
-                      </div>
-                      <p class="slider--item-title">Alex Nowak</p>
-                      <p class="slider--item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
-                    </a>
-                  </li>
-                </ul>
-                <div class="slider--prev">
-                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                  viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
-                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-                    <path d="M561,1169C525,1155,10,640,3,612c-3-13,1-36,8-52c8-15,134-145,281-289C527,41,562,10,590,10c22,0,41,9,61,29
-                    c55,55,49,64-163,278L296,510h575c564,0,576,0,597,20c46,43,37,109-18,137c-19,10-159,13-590,13l-565,1l182,180
-                    c101,99,187,188,193,199c16,30,12,57-12,84C631,1174,595,1183,561,1169z"/>
-                  </g>
-                  </svg>
-                </div>
-                <div class="slider--next">
-                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
-                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-                    <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
-                  </g>
-                  </svg>
-                </div>
-              </div>
+<nav class="nav">
+        <div class="container">
+            <div class="logo">
+                <a href="#">Mukuha Levi</a>
             </div>
-          </li>
-
-
-          <li class="l-section section">
-            <div class="work">
-              <h2>App development</h2>
-              <div class="work--lockup">
-                <ul class="slider">
-                  <li class="slider--item slider--item-left">
-                    <a href="#0">
-                      <div class="slider--item-image">
-                        <img src="../static/assets/img/work-victory.jpg" alt="Victory">
-                      </div>
-                      <p class="slider--item-title">Victory</p>
-                      <p class="slider--item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
-                    </a>
-                  </li>
-                  <li class="slider--item slider--item-center">
-                    <a href="#0">
-                      <div class="slider--item-image">
-                        <img src="../static/assets/img/work-metiew-smith.jpg" alt="Metiew and Smith">
-                      </div>
-                      <p class="slider--item-title">Metiew &amp; Smith</p>
-                      <p class="slider--item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
-                    </a>
-                  </li>
-                  <li class="slider--item slider--item-right">
-                    <a href="#0">
-                      <div class="slider--item-image">
-                        <img src="../static/assets/img/work-alex-nowak.jpg" alt="Alex Nowak">
-                      </div>
-                      <p class="slider--item-title">Alex Nowak</p>
-                      <p class="slider--item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
-                    </a>
-                  </li>
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
-                <div class="slider--prev">
-                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                  viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
-                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-                    <path d="M561,1169C525,1155,10,640,3,612c-3-13,1-36,8-52c8-15,134-145,281-289C527,41,562,10,590,10c22,0,41,9,61,29
-                    c55,55,49,64-163,278L296,510h575c564,0,576,0,597,20c46,43,37,109-18,137c-19,10-159,13-590,13l-565,1l182,180
-                    c101,99,187,188,193,199c16,30,12,57-12,84C631,1174,595,1183,561,1169z"/>
-                  </g>
-                  </svg>
-                </div>
-                <div class="slider--next">
-                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
-                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-                    <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
-                  </g>
-                  </svg>
-                </div>
-              </div>
             </div>
-          </li>
-          <li class="l-section section">
-            <div class="work">
-              <h2>Cyber security</h2>
-              <div class="work--lockup">
-                <ul class="slider">
-                  <li class="slider--item slider--item-left">
-                    <a href="#0">
-                      <div class="slider--item-image">
-                        <img src="../static/assets/img/work-victory.jpg" alt="Victory">
-                      </div>
-                      <p class="slider--item-title">Victory</p>
-                      <p class="slider--item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
-                    </a>
-                  </li>
-                  <li class="slider--item slider--item-center">
-                    <a href="#0">
-                      <div class="slider--item-image">
-                        <img src="../static/assets/img/work-metiew-smith.jpg" alt="Metiew and Smith">
-                      </div>
-                      <p class="slider--item-title">Metiew &amp; Smith</p>
-                      <p class="slider--item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
-                    </a>
-                  </li>
-                  <li class="slider--item slider--item-right">
-                    <a href="#0">
-                      <div class="slider--item-image">
-                        <img src="../static/assets/img/work-alex-nowak.jpg" alt="Alex Nowak">
-                      </div>
-                      <p class="slider--item-title">Alex Nowak</p>
-                      <p class="slider--item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
-                    </a>
-                  </li>
-                </ul>
-                <div class="slider--prev">
-                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                  viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
-                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-                    <path d="M561,1169C525,1155,10,640,3,612c-3-13,1-36,8-52c8-15,134-145,281-289C527,41,562,10,590,10c22,0,41,9,61,29
-                    c55,55,49,64-163,278L296,510h575c564,0,576,0,597,20c46,43,37,109-18,137c-19,10-159,13-590,13l-565,1l182,180
-                    c101,99,187,188,193,199c16,30,12,57-12,84C631,1174,595,1183,561,1169z"/>
-                  </g>
-                  </svg>
-                </div>
-                <div class="slider--next">
-                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
-                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-                    <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
-                  </g>
-                  </svg>
-                </div>
-              </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+    </nav>
+
+    <section class="home">
+    </section>
+
+<section>
+        <h2>About Me</h2>
+        <p>
+           Hello there! I'm Levi Mukuha, a dedicated and creative full-stack developer who thrives on turning innovative ideas into dynamic digital solutions. With a strong foundation in web and app development, coupled with my expertise in penetration testing, I bring a unique blend of technical skills and problem-solving prowess to every project.
+<br>
+<br>
+            My journey in the tech world has been shaped by diverse and challenging projects, where I've had the opportunity to craft captivating websites, build robust applications, and delve into the intricacies of penetration testing to ensure digital security. It's not just about writing code for me; it's about crafting digital experiences that leave a lasting impact.
+
+            I'm a firm believer in continuous learning, staying up-to-date with the latest technologies, and pushing the boundaries of what's possible. Whether it's creating seamless user interfaces, optimizing database performance, or strengthening digital defenses, I approach each task with enthusiasm and a commitment to excellence.
+<br>
+<br>
+            Beyond the lines of code, I'm a tech enthusiast who enjoys staying immersed in the ever-evolving world of technology. My goal is to contribute to the digital landscape by building innovative solutions that not only meet but exceed expectations.
+<br>
+<br>
+            Let's embark on a journey to bring your digital ideas to life, enhance user experiences, and fortify your digital presence. Together, we can navigate the exciting realm of technology and transform your vision into reality.
+        </p>
+    </section>
+
+    <!-- ... Previous HTML ... -->
+
+<!-- ... Previous HTML ... -->
+
+<section>
+    <h2>Skills</h2>
+    <div class="skills-container">
+        <div class="skill">
+            <span class="skill-title">Web Development</span>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 80%;"></div>
             </div>
-          </li>
-
-
-        </ul>
-      </div>
+        </div>
+        <div class="skill">
+            <span class="skill-title">App Development</span>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 75%;"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <span class="skill-title">Penetration Testing</span>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%;"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <span class="skill-title">Database Management</span>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%;"></div>
+            </div>
+        </div>
+        <!-- Add more skills as needed -->
     </div>
-  </div>
-  <ul class="outer-nav">
-    <li class="is-active">Home</li>
-    <li>Works</li>
-    <li>About</li>
+</section>
 
-  </ul>
-</div>
+<!-- ... Remaining HTML ... -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="../static/assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
-<script src="../static/assets/js/function-min.js"></script>
+
+
+<!-- ... Remaining HTML ... -->
+
+
+    <section>
+        <h2>Projects</h2>
+
+        <!-- Project 1 -->
+        <div class="project-container">
+            <h3>Car Website</h3>
+            <p>A website showcasing various car models with details and specifications.</p>
+            <div class="project-links">
+                <a href="#" target="_blank">Preview</a>
+                <a href="#" target="_blank">GitHub</a>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-container">
+            <h3>Family Website</h3>
+            <p>A family-oriented website for sharing photos, events, and updates.</p>
+            <div class="project-links">
+                <a href="#" target="_blank">Preview</a>
+                <a href="#" target="_blank">GitHub</a>
+            </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-container">
+            <h3>School Database System</h3>
+            <p>A family-oriented website for sharing photos, events, and updates.</p>
+            <div class="project-links">
+                <a href="#" target="_blank">Preview</a>
+                <a href="#" target="_blank">GitHub</a>
+            </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-container">
+            <h3>Timetabling System</h3>
+            <p>A family-oriented website for sharing photos, events, and updates.</p>
+            <div class="project-links">
+                <a href="#" target="_blank">Preview</a>
+                <a href="#" target="_blank">GitHub</a>
+            </div>
+        </div>
+
+        <!-- Add more projects as needed -->
+
+    </section>
+
+    <section>
+        <h2>Open Source Contributions</h2>
+        <!-- Your Open Source Contributions content here -->
+        <!-- os 1 -->
+        <div class="project-container">
+            <h3>Build plugins or extensions for existing software</h3>
+            <p>A website showcasing various car models with details and specifications.</p>
+            <div class="project-links">
+                <a href="#" target="_blank">Preview</a>
+                <a href="#" target="_blank">GitHub</a>
+            </div>
+        </div>
+
+        <!-- Open source 2 -->
+        <div class="project-container">
+            <h3>Develop tools to improve developer workflows</h3>
+            <p>A website showcasing various car models with details and specifications.</p>
+            <div class="project-links">
+                <a href="#" target="_blank">Preview</a>
+                <a href="#" target="_blank">GitHub</a>
+            </div>
+        </div>
+
+    </section>
+
+    <section>
+        <h2>Contact</h2>
+        <div class="contact-info">
+            <p>Feel free to contact me for any project or collaboration.</p>
+            <p>Phone: +254 712 345 678</p>
+            <p>Email: <a href="mailto:Mukuhalevi@gmail.com">Mukuhalevi@gmail.com</a></p>
+        </div>
+
+    </section>
+
+
+<!-- Jquery needed -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+<!-- Function used to shrink nav bar removing paddings and adding black background -->
+    <script>
+        $(window).scroll(function() {
+            if ($(document).scrollTop() > 50) {
+                $('.nav').addClass('affix');
+                console.log("OK");
+            } else {
+                $('.nav').removeClass('affix');
+            }
+        });
+    </script>
+
+<script>
+  $('.navTrigger').click(function () {
+    $(this).toggleClass('active');
+    console.log("Clicked menu");
+    $("#mainListDiv").toggleClass("show_list");
+    $("#mainListDiv").fadeIn();
+
+});
+
+</script>
 </body>
 </html>

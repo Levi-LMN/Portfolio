@@ -1,27 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Add work</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Levi Mukuha - Portfolio</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(to right, #008080, #001f3f);
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    line-height: 1.2;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 20px;
+    color: #ddd;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 30px 0;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+}
+
+
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+.project-container {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 40px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.project-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-container h3 {
+    color: #3498db;
+}
+
+.project-container p {
+    color: #555;
+}
+
+.project-links a {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    background-color: #3498db;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.project-links a:hover {
+    background-color: #297fb8;
+}
+
+footer {
+    background: linear-gradient(to right, #008080, #001f3f); /* Same gradient as the header */
+    color: white;
+    text-align: center;
+    padding: 20px 0; /* Adjust padding as needed */
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 30px 0; /* Adjust padding as needed */
+    }
+}
+
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .project-container {
+        padding: 15px;
+        margin-bottom: 30px;
+    }
+
+    .project-links a {
+        padding: 8px 15px;
+    }
+
+    footer {
+        padding: 5px 0;
+    }
+}
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-info p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.contact-info p:last-child {
+    margin-bottom: 0;
+}
+
+.contact-info a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #297fb8;
+}
+
+
+    </style>
 </head>
+
 <body>
-<!-- add.html -->
-<!-- ... (previous code) -->
-<form method="post" enctype="multipart/form-data">
-    <label for="title">Title:</label>
-    <input type="text" name="title" required>
-    <br>
-    <label for="description">Description:</label>
-    <textarea name="description" required></textarea>
-    <br>
-    <label for="image">Image:</label>
-    <input type="file" name="image">
-    <br>
-    <input type="submit" value="Add">
-</form>
+
+    <header>
+        <h1>Levi Mukuha</h1>
+        <p>Fullstack Developer | Web & App Development | Penetration Testing</p>
+    </header>
+
+    <section>
+        <h2>About Me</h2>
+        <p>
+            Hi, I'm Levi Mukuha, a passionate fullstack developer with expertise in web and app development,
+            as well as penetration testing. I have hands-on experience working on various projects, including
+            car websites, family websites, school databases, timetabling systems, and more.
+        </p>
+    </section>
+
+    <section>
+        <h2>Skills</h2>
+        <ul>
+            <li>Web Development</li>
+            <li>App Development</li>
+            <li>Penetration Testing</li>
+            <li>Database Management</li>
+            <!-- Add more skills as needed -->
+        </ul>
+    </section>
+
+    <section>
+        <h2>Projects</h2>
+
+        <!-- Project 1 -->
+        <div class="project-container">
+            <h3>Car Website</h3>
+            <p>A website showcasing various car models with details and specifications.</p>
+            <div class="project-links">
+                <a href="#" target="_blank">Preview</a>
+                <a href="#" target="_blank">GitHub</a>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-container">
+            <h3>Family Website</h3>
+            <p>A family-oriented website for sharing photos, events, and updates.</p>
+            <div class="project-links">
+                <a href="#" target="_blank">Preview</a>
+                <a href="#" target="_blank">GitHub</a>
+            </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-container">
+            <h3>School Database System</h3>
+            <p>A family-oriented website for sharing photos, events, and updates.</p>
+            <div class="project-links">
+                <a href="#" target="_blank">Preview</a>
+                <a href="#" target="_blank">GitHub</a>
+            </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-container">
+            <h3>Timetabling System</h3>
+            <p>A family-oriented website for sharing photos, events, and updates.</p>
+            <div class="project-links">
+                <a href="#" target="_blank">Preview</a>
+                <a href="#" target="_blank">GitHub</a>
+            </div>
+        </div>
+
+        <!-- Add more projects as needed -->
+
+    </section>
+
+    <section>
+        <h2>Open Source Contributions</h2>
+        <!-- Your Open Source Contributions content here -->
+        <!-- os 1 -->
+        <div class="project-container">
+            <h3>Build plugins or extensions for existing software</h3>
+            <p>A website showcasing various car models with details and specifications.</p>
+            <div class="project-links">
+                <a href="#" target="_blank">Preview</a>
+                <a href="#" target="_blank">GitHub</a>
+            </div>
+        </div>
+
+        <!-- Open source 2 -->
+        <div class="project-container">
+            <h3>Develop tools to improve developer workflows</h3>
+            <p>A website showcasing various car models with details and specifications.</p>
+            <div class="project-links">
+                <a href="#" target="_blank">Preview</a>
+                <a href="#" target="_blank">GitHub</a>
+            </div>
+        </div>
+
+    </section>
+
+    <section>
+        <h2>Contact</h2>
+        <div class="contact-info">
+            <p>Feel free to contact me for any project or collaboration.</p>
+            <p>Phone: +254 712 345 678</p>
+            <p>Email: <a href="mailto:Mukuhalevi@gmail.com">Mukuhalevi@gmail.com</a></p>
+        </div>
+    </section>
 
 
-
+    <footer>
+        &copy; 2024 Levi Mukuha | Designed by Levi Mukuha
+    </footer>
 
 </body>
+
 </html>
