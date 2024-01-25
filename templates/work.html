@@ -766,7 +766,7 @@ h2 {
     <span class="language-badge javascript">JS</span>
     <div class="project-links">
         <a href="#" target="_blank" class="clickable-link">Preview</a>
-        <a href="#" target="_blank" class="unclickable-link">GitHub</a>
+        <a href="#" target="_blank" class="unclickable-link" id="unclickableLink">GitHub</a>
     </div>
 </div>
 
@@ -839,7 +839,7 @@ h2 {
 
     <div class="project-links">
         <a href="#" target="_blank" class="clickable-link">Preview</a>
-        <a href="#" target="_blank" class="unclickable-link">GitHub</a>
+        <a href="#" target="_blank" class="unclickable-link" id="unclickableLink">GitHub</a>
     </div>
 </div>
 
@@ -916,7 +916,7 @@ h2 {
     <span class="language-badge java">Java</span>
 
     <div class="project-links">
-        <a href="#" target="_blank" class="unclickable-link">Preview</a>
+        <a href="#" target="_blank" class="unclickable-link" id="unclickableLink">Preview</a>
         <a href="#" target="_blank" class="clickable-link">GitHub</a>
     </div>
 </div>
@@ -932,7 +932,7 @@ h2 {
     <span class="language-badge go">Go</span>
 
     <div class="project-links">
-        <a href="#" target="_blank" class="unclickable-link">Preview</a>
+        <a href="#" target="_blank" class="unclickable-link" id="unclickableLink">Preview</a>
         <a href="#" target="_blank" class="clickable-link">GitHub</a>
     </div>
 </div>
@@ -1013,6 +1013,14 @@ h2 {
 
 });
 
+</script>
+
+<script>
+    document.getElementById('unclickableLink').addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default click behavior
+        // Optionally, you can provide a message or take other actions here
+        console.log('This link is unclickable.');
+    });
 </script>
 </body>
 </html>
