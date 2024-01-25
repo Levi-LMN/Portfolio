@@ -490,26 +490,41 @@ section:nth-of-type(4) {
     transform: scale(1.02);
 }
 
+/* Add this to your existing styles or adjust as needed */
+
 .project-links a {
     display: inline-block;
     margin: 10px;
     padding: 10px 20px;
-    color: #fff;
-    background-color: #00E676;
-    text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-.project-links a:hover {
-    background-color: #009960;
+.project-links a.clickable-link {
+    color: #fff; /* Clickable link text color */
+    background-color: #00E676; /* Clickable link background color */
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle box shadow */
 }
-/* Open Source Contributions section */
-section:nth-of-type(5) {
-    padding: 80px 0;
-    background-color: #f8f8f8;
+
+.project-links a.clickable-link:hover {
+    background-color: #009960; /* Hover color for clickable link */
 }
+
+.project-links a.unclickable-link {
+    color: #777; /* Unclickable link text color */
+    background-color: #f0f0f0; /* Unclickable link background color */
+    text-decoration: none;
+    cursor: not-allowed; /* Change cursor for unclickable link */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle box shadow */
+}
+
+/* Hover styles for unclickable link (optional) */
+.project-links a.unclickable-link:hover {
+    background-color: #f0f0f0; /* Hover color for unclickable link */
+}
+
 
 /* Contact section */
 section:nth-of-type(6) {
@@ -742,21 +757,21 @@ h2 {
         <h2>Projects</h2>
 
         <!-- Project 1 -->
-        <div class="project-container">
-            <h3>
-                Car Website
+<div class="project-container">
+    <h3>Car Website</h3>
+    <p>A website showcasing various car models with details and specifications.</p>
+    <p>Languages used:</p>
+    <span class="language-badge html">HTML</span>
+    <span class="language-badge css">CSS</span>
+    <span class="language-badge javascript">JS</span>
+    <div class="project-links">
+        <a href="#" target="_blank" class="clickable-link">Preview</a>
+        <a href="#" target="_blank" class="unclickable-link">GitHub</a>
+    </div>
+</div>
 
-            </h3>
-            <p>A website showcasing various car models with details and specifications.</p>
-            <p>Languages used:</p>
-            <span class="language-badge html">HTML</span>
-                <span class="language-badge css">CSS</span>
-                <span class="language-badge javascript">JS</span>
-            <div class="project-links">
-                <a href="#" target="_blank">Preview</a>
-                <a href="#" target="_blank">GitHub</a>
-            </div>
-        </div>
+<!-- ... Other projects ... -->
+
 
 
 
@@ -771,8 +786,8 @@ h2 {
                 <span class="language-badge flask">flask</span>
 
             <div class="project-links">
-                <a href="#" target="_blank">Preview</a>
-                <a href="#" target="_blank">GitHub</a>
+                <a href="#" target="_blank" class="clickable-link">Preview</a>
+                <a href="#" target="_blank" class="clickable-link">GitHub</a>
             </div>
         </div>
 
@@ -787,8 +802,8 @@ h2 {
     <span class="language-badge php">PHP</span>
 
     <div class="project-links">
-        <a href="#" target="_blank">Preview</a>
-        <a href="#" target="_blank">GitHub</a>
+        <a href="#" target="_blank" class="clickable-link">Preview</a>
+        <a href="#" target="_blank" class="clickable-link">GitHub</a>
     </div>
 </div>
 
@@ -805,8 +820,8 @@ h2 {
     <span class="language-badge python">Python</span>
 
     <div class="project-links">
-        <a href="#" target="_blank">Preview</a>
-        <a href="#" target="_blank">GitHub</a>
+        <a href="#" target="_blank" class="clickable-link">Preview</a>
+        <a href="#" target="_blank" class="clickable-link">GitHub</a>
     </div>
 </div>
 
@@ -823,8 +838,8 @@ h2 {
     <span class="language-badge sql">SQL</span>
 
     <div class="project-links">
-        <a href="#" target="_blank">Preview</a>
-        <a href="#" target="_blank">GitHub</a>
+        <a href="#" target="_blank" class="clickable-link">Preview</a>
+        <a href="#" target="_blank" class="unclickable-link">GitHub</a>
     </div>
 </div>
 
@@ -840,8 +855,8 @@ h2 {
     <span class="language-badge websocket">WebSocket</span>
 
     <div class="project-links">
-        <a href="#" target="_blank">Preview</a>
-        <a href="#" target="_blank">GitHub</a>
+        <a href="#" target="_blank" class="clickable-link">Preview</a>
+        <a href="#" target="_blank" class="clickable-link">GitHub</a>
     </div>
 </div>
 
@@ -858,8 +873,8 @@ h2 {
     <span class="language-badge database">Database : PostgreSQL)</span>
 
     <div class="project-links">
-        <a href="#" target="_blank">Preview</a>
-        <a href="#" target="_blank">GitHub</a>
+        <a href="#" target="_blank" class="clickable-link">Preview</a>
+        <a href="#" target="_blank" class="clickable-link">GitHub</a>
     </div>
 </div>
 
@@ -876,8 +891,8 @@ h2 {
     <span class="language-badge framework">ML Framework : TensorFlow)</span>
 
     <div class="project-links">
-        <a href="#" target="_blank">Preview</a>
-        <a href="#" target="_blank">GitHub</a>
+        <a href="#" target="_blank" class="clickable-link">Preview</a>
+        <a href="#" target="_blank" class="clickable-link">GitHub</a>
     </div>
 </div>
 
@@ -902,7 +917,7 @@ h2 {
 
     <div class="project-links">
         <a href="#" target="_blank" class="unclickable-link">Preview</a>
-        <a href="#" target="_blank">GitHub</a>
+        <a href="#" target="_blank" class="clickable-link">GitHub</a>
     </div>
 </div>
 
@@ -912,13 +927,13 @@ h2 {
     <h3>Develop tools to improve developer workflows</h3>
     <p>Tools crafted to simplify tasks, boost productivity, and streamline the software development process.</p>
     <p>Languages used:</p>
-    <span class="language-badge javascript">JavaScript</span>
+    <span class="language-badge javascript" >JavaScript</span>
     <span class="language-badge python">Python</span>
     <span class="language-badge go">Go</span>
 
     <div class="project-links">
-        <a href="#" target="_blank">Preview</a>
-        <a href="#" target="_blank">GitHub</a>
+        <a href="#" target="_blank" class="unclickable-link">Preview</a>
+        <a href="#" target="_blank" class="clickable-link">GitHub</a>
     </div>
 </div>
 
@@ -935,8 +950,8 @@ h2 {
     <span class="language-badge d3js">D3.js</span>
 
     <div class="project-links">
-        <a href="#" target="_blank">Preview</a>
-        <a href="#" target="_blank">GitHub</a>
+        <a href="#" target="_blank" class="clickable-link">Preview</a>
+        <a href="#" target="_blank" class="clickable-link">GitHub</a>
     </div>
 </div>
 
@@ -951,8 +966,8 @@ h2 {
     <span class="language-badge database">Database : MongoDB)</span>
 
     <div class="project-links">
-        <a href="#" target="_blank">Preview</a>
-        <a href="#" target="_blank">GitHub</a>
+        <a href="#" target="_blank" class="clickable-link">Preview</a>
+        <a href="#" target="_blank" class="clickable-link">GitHub</a>
     </div>
 </div>
 
