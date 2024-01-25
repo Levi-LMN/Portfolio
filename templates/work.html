@@ -559,16 +559,96 @@ h2 {
 </style>
 
 <style>
-    .unclickable-link {
-        pointer-events: none;
-        cursor: default;
-        color: gray;
-        text-decoration: none;
-    }
+.language-badge {
+    display: inline-block;
+    padding: 0.2em 0.5em;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 0.8em;
+    border-radius: 3px;
+}
 
-    .unclickable-link:hover {
-        color: gray; /* Optional: You can keep the hover color the same as normal to indicate it's inactive */
-    }
+/* Language Badges */
+.language-badge.html {
+    background-color: #e44d26; /* HTML color */
+    color: #ffffff; /* Text color */
+}
+
+.language-badge.css {
+    background-color: #264de4; /* CSS color */
+    color: #ffffff; /* Text color */
+}
+
+.language-badge.javascript {
+    background-color: #f0db4f; /* JavaScript color */
+    color: #000000; /* Text color */
+}
+
+.language-badge.nodejs {
+    background-color: #68a063; /* Node.js color */
+    color: #ffffff; /* Text color */
+}
+
+.language-badge.python {
+    background-color: #3572A5; /* Python color */
+    color: #ffffff; /* Text color */
+}
+
+.language-badge.sql {
+    background-color: #336791; /* SQL color */
+    color: #ffffff; /* Text color */
+}
+
+.language-badge.websocket {
+    background-color: #71717d; /* WebSocket color */
+    color: #ffffff; /* Text color */
+}
+
+.language-badge.react {
+    background-color: #61dafb; /* React.js color */
+    color: #000000; /* Text color */
+}
+
+.language-badge.d3js {
+    background-color: #f9a03c; /* D3.js color */
+    color: #000000; /* Text color */
+}
+
+.language-badge.reactnative {
+    background-color: #61dafb; /* React Native color */
+    color: #000000; /* Text color */
+}
+
+.language-badge.go {
+    background-color: #00add8; /* Go color */
+    color: #ffffff; /* Text color */
+}
+
+.language-badge.database {
+    background-color: #00758F; /* Database color */
+    color: #ffffff; /* Text color */
+}
+
+.language-badge.framework {
+    background-color: #4d4d4d; /* Framework color */
+    color: #ffffff; /* Text color */
+}
+/* Language Badges */
+.language-badge.java {
+    background-color: #5382a1; /* Java color */
+    color: #ffffff; /* Text color */
+}
+
+.language-badge.php {
+    background-color: #777bb4; /* PHP color */
+    color: #ffffff; /* Text color */
+}
+
+.language-badge.flask {
+    background-color: #000000; /* Flask color */
+    color: #ffffff; /* Text color */
+}
+
 </style>
 
 
@@ -581,10 +661,10 @@ h2 {
             </div>
             <div id="mainListDiv" class="main_list">
                 <ul class="navlinks">
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
             <span class="navTrigger">
@@ -598,7 +678,7 @@ h2 {
     <section class="home">
     </section>
 
-<section>
+<section id="about">
         <h2>About Me</h2>
         <p>
            Hello there! I'm Levi Mukuha, a dedicated and creative full-stack developer who thrives on turning innovative ideas into dynamic digital solutions. With a strong foundation in web and app development, coupled with my expertise in penetration testing, I bring a unique blend of technical skills and problem-solving prowess to every project.
@@ -620,7 +700,7 @@ h2 {
 
 <!-- ... Previous HTML ... -->
 
-<section>
+<section id="skills">
     <h2>Skills</h2>
     <div class="skills-container">
         <div class="skill">
@@ -658,48 +738,151 @@ h2 {
 <!-- ... Remaining HTML ... -->
 
 
-    <section>
+    <section id="projects">
         <h2>Projects</h2>
 
         <!-- Project 1 -->
         <div class="project-container">
-            <h3>Car Website</h3>
+            <h3>
+                Car Website
+
+            </h3>
             <p>A website showcasing various car models with details and specifications.</p>
+            <p>Languages used:</p>
+            <span class="language-badge html">HTML</span>
+                <span class="language-badge css">CSS</span>
+                <span class="language-badge javascript">JS</span>
             <div class="project-links">
                 <a href="#" target="_blank">Preview</a>
                 <a href="#" target="_blank">GitHub</a>
             </div>
         </div>
+
+
+
+
 
         <!-- Project 2 -->
         <div class="project-container">
             <h3>Family Website</h3>
             <p>A family-oriented website for sharing photos, events, and updates.</p>
+            <p>Languages used:</p>
+            <span class="language-badge python">React</span>
+                <span class="language-badge flask">flask</span>
+
             <div class="project-links">
                 <a href="#" target="_blank">Preview</a>
                 <a href="#" target="_blank">GitHub</a>
             </div>
         </div>
 
-        <!-- Project 3 -->
-        <div class="project-container">
-            <h3>School Database System</h3>
-            <p>A comprehensive database management solution designed to streamline and enhance various aspects of school administration</p>
-            <div class="project-links">
-                <a href="#" target="_blank">Preview</a>
-                <a href="#" target="_blank">GitHub</a>
-            </div>
-        </div>
+        <!-- Project 3: School Database System -->
+<div class="project-container">
+    <h3>School Database System</h3>
+    <p>A comprehensive database management solution designed to streamline and enhance various aspects of school administration</p>
+    <p>Languages used:</p>
+    <span class="language-badge html">HTML</span>
+    <span class="language-badge css">CSS</span>
+    <span class="language-badge javascript">JavaScript</span>
+    <span class="language-badge php">PHP</span>
 
-        <!-- Project 4 -->
-        <div class="project-container">
-            <h3>Timetabling System</h3>
-            <p> A robust scheduling solution tailored for educational institutions to efficiently manage and organize class schedules, events, and resources. </p>
-            <div class="project-links">
-                <a href="#" target="_blank">Preview</a>
-                <a href="#" target="_blank">GitHub</a>
-            </div>
-        </div>
+    <div class="project-links">
+        <a href="#" target="_blank">Preview</a>
+        <a href="#" target="_blank">GitHub</a>
+    </div>
+</div>
+
+
+        <!-- Project 4: Timetabling System -->
+<div class="project-container">
+    <h3>Timetabling System</h3>
+    <p>A robust scheduling solution tailored for educational institutions to efficiently manage and organize class schedules, events, and resources.</p>
+    <p>Languages used:</p>
+    <span class="language-badge html">HTML</span>
+    <span class="language-badge css">CSS</span>
+    <span class="language-badge javascript">JavaScript</span>
+    <span class="language-badge php">PHP</span>
+    <span class="language-badge python">Python</span>
+
+    <div class="project-links">
+        <a href="#" target="_blank">Preview</a>
+        <a href="#" target="_blank">GitHub</a>
+    </div>
+</div>
+
+        <!-- Project: E-commerce Platform -->
+<div class="project-container">
+    <h3>E-commerce Platform</h3>
+    <p>Building a full-fledged e-commerce platform.</p>
+    <p>Languages used:</p>
+    <span class="language-badge html">HTML</span>
+    <span class="language-badge css">CSS</span>
+    <span class="language-badge javascript">JavaScript</span>
+    <span class="language-badge nodejs">Node.js</span>
+    <span class="language-badge python">Python</span>
+    <span class="language-badge sql">SQL</span>
+
+    <div class="project-links">
+        <a href="#" target="_blank">Preview</a>
+        <a href="#" target="_blank">GitHub</a>
+    </div>
+</div>
+
+        <!-- Project: Chat Application -->
+<div class="project-container">
+    <h3>Chat Application</h3>
+    <p>Creating a real-time chat application.</p>
+    <p>Languages used:</p>
+    <span class="language-badge html">HTML</span>
+    <span class="language-badge css">CSS</span>
+    <span class="language-badge javascript">JavaScript</span>
+    <span class="language-badge nodejs">Node.js</span>
+    <span class="language-badge websocket">WebSocket</span>
+
+    <div class="project-links">
+        <a href="#" target="_blank">Preview</a>
+        <a href="#" target="_blank">GitHub</a>
+    </div>
+</div>
+
+        <!-- Project: Blog Platform -->
+<div class="project-container">
+    <h3>Blog Platform</h3>
+    <p>Creating a platform for publishing and managing blog posts.</p>
+    <p>Languages used:</p>
+    <span class="language-badge html">HTML</span>
+    <span class="language-badge css">CSS</span>
+    <span class="language-badge javascript">JavaScript</span>
+    <span class="language-badge nodejs">Node.js</span>
+    <span class="language-badge python">Python</span>
+    <span class="language-badge database">Database : PostgreSQL)</span>
+
+    <div class="project-links">
+        <a href="#" target="_blank">Preview</a>
+        <a href="#" target="_blank">GitHub</a>
+    </div>
+</div>
+
+
+        <!-- Project: Machine Learning Model Deployment -->
+<div class="project-container">
+    <h3>Machine Learning Model Deployment</h3>
+    <p>Deploying a machine learning model as a web service.</p>
+    <p>Languages used:</p>
+    <span class="language-badge html">HTML</span>
+    <span class="language-badge css">CSS</span>
+    <span class="language-badge javascript">JavaScript</span>
+    <span class="language-badge python">Python</span>
+    <span class="language-badge framework">ML Framework : TensorFlow)</span>
+
+    <div class="project-links">
+        <a href="#" target="_blank">Preview</a>
+        <a href="#" target="_blank">GitHub</a>
+    </div>
+</div>
+
+
+
 
         <!-- Add more projects as needed -->
 
@@ -708,29 +891,76 @@ h2 {
     <section>
         <h2>Open Source Contributions</h2>
         <!-- Your Open Source Contributions content here -->
-        <!-- os 1 -->
-        <div class="project-container">
-            <h3>Build plugins or extensions for existing software</h3>
-            <p>Creating versatile and seamless add-ons that augment the functionality of various software applications.</p>
-            <div class="project-links">
-                <a href="#" target="_blank" class="unclickable-link">Preview</a>
-                <a href="#" target="_blank">GitHub</a>
-            </div>
-        </div>
+        <!-- Project: Build plugins or extensions for existing software -->
+<div class="project-container">
+    <h3>Build plugins or extensions for existing software</h3>
+    <p>Creating versatile and seamless add-ons that augment the functionality of various software applications.</p>
+    <p>Languages used:</p>
+    <span class="language-badge javascript">JavaScript</span>
+    <span class="language-badge python">Python</span>
+    <span class="language-badge java">Java</span>
 
-        <!-- Open source 2 -->
-        <div class="project-container">
-            <h3>Develop tools to improve developer workflows</h3>
-            <p>Tools crafted to simplify tasks, boost productivity, and streamline the software development process</p>
-            <div class="project-links">
-                <a href="#" target="_blank">Preview</a>
-                <a href="#" target="_blank">GitHub</a>
-            </div>
-        </div>
+    <div class="project-links">
+        <a href="#" target="_blank" class="unclickable-link">Preview</a>
+        <a href="#" target="_blank">GitHub</a>
+    </div>
+</div>
+
+
+        <!-- Project: Develop tools to improve developer workflows -->
+<div class="project-container">
+    <h3>Develop tools to improve developer workflows</h3>
+    <p>Tools crafted to simplify tasks, boost productivity, and streamline the software development process.</p>
+    <p>Languages used:</p>
+    <span class="language-badge javascript">JavaScript</span>
+    <span class="language-badge python">Python</span>
+    <span class="language-badge go">Go</span>
+
+    <div class="project-links">
+        <a href="#" target="_blank">Preview</a>
+        <a href="#" target="_blank">GitHub</a>
+    </div>
+</div>
+
+        <!-- Project: Data Visualization Dashboard -->
+<div class="project-container">
+    <h3>Data Visualization Dashboard</h3>
+    <p>Developing a dashboard for visualizing and analyzing data.</p>
+    <p>Languages used:</p>
+    <span class="language-badge html">HTML</span>
+    <span class="language-badge css">CSS</span>
+    <span class="language-badge javascript">JavaScript</span>
+    <span class="language-badge react">React.js</span>
+    <span class="language-badge python">Python</span>
+    <span class="language-badge d3js">D3.js</span>
+
+    <div class="project-links">
+        <a href="#" target="_blank">Preview</a>
+        <a href="#" target="_blank">GitHub</a>
+    </div>
+</div>
+
+        <!-- Project: Mobile App for Task Management -->
+<div class="project-container">
+    <h3>Mobile App for Task Management</h3>
+    <p>Building a mobile app for task management and collaboration.</p>
+    <p>Languages used:</p>
+    <span class="language-badge reactnative">React Native</span>
+    <span class="language-badge javascript">TypeScript</span>
+    <span class="language-badge nodejs">Node.js</span>
+    <span class="language-badge database">Database : MongoDB)</span>
+
+    <div class="project-links">
+        <a href="#" target="_blank">Preview</a>
+        <a href="#" target="_blank">GitHub</a>
+    </div>
+</div>
+
+
 
     </section>
 
-    <section>
+    <section id="contact">
         <h2>Contact</h2>
         <div class="contact-info">
             <p>Feel free to contact me for any project or collaboration.</p>
