@@ -1,6 +1,6 @@
 # My Portfolio
 
-Welcome to my portfolio! You can preview it at [Mukuhalevi.co.ke](https://levi-lmn.github.io/Portfolio/).
+Welcome to my portfolio! You can preview it at [Mukuhalevi.co.ke](https://levi-lmn.github.io/Portfolio/)
 
 ## Overview
 
